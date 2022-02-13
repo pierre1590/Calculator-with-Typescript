@@ -13,20 +13,25 @@ const StyledButton = styled.div`
     background: #e48900;
     text-align: center;
     border:none;
-    border-radius: 8px;
-    padding: 25px;
+    border-radius: 50px;
+    padding: 15px;
+    font-size: 2em;
     
 `;
 
  const Button: React.FC<Props> = ({label,position,width}) => {
-   const styles = {};
+   const styles:React.CSSProperties = {};
+if (position) {
+        styles.gridColumnStart = position[0]+1;
+        styles.gridRowStart = position[1]+1;
+    }
 
-    if (position) {
-        styles.gridRowStart = position[0];
+    if (width) {
+        styles.gridColumnEnd = `span ${width}`;
     }
 
   return (<>
-    <StyledButton>{label}</StyledButton>
+    <StyledButton style={styles}>{label}</StyledButton>
   </>)
 }
 
