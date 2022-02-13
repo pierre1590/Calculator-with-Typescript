@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   align-items: center;
-  background: #323232;
+  background: #001;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
